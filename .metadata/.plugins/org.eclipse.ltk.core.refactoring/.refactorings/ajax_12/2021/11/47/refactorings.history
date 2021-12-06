@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.care.root.infoDTO&apos; to &apos;InfoDTO&apos;&#x0D;&#x0A;- Original project: &apos;ajax_12&apos;&#x0D;&#x0A;- Original element: &apos;com.care.root.infoDTO&apos;&#x0D;&#x0A;- Renamed element: &apos;com.care.root.InfoDTO&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;infoDTO&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.care.root{infoDTO.java[infoDTO" matchStrategy="1" name="InfoDTO" qualified="false" references="true" similarDeclarations="false" stamp="1637042460414" textual="false" version="1.0"/>
+</session>

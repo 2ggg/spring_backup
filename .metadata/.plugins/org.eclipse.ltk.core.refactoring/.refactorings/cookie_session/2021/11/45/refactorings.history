@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;delSession.jsp, makeSession.jsp, resultSession.jsp&apos; to &apos;session&apos;" description="Move 3 resources to &apos;session&apos;" destination="src/main/webapp/WEB-INF/views/session" element1="src/main/webapp/WEB-INF/views/cook/delSession.jsp" element2="src/main/webapp/WEB-INF/views/cook/makeSession.jsp" element3="src/main/webapp/WEB-INF/views/cook/resultSession.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="3" stamp="1636079568597" updateReferences="true"/>
+</session>

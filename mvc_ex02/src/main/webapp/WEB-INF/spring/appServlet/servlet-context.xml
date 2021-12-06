@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet 설정 내용 -->
+	
+	<!-- @Controller 어노테이션을 자동으로 빈 등록 -->
+	<annotation-driven />
+
+	<!-- 정적파일(css, html, img, js)들의 경로 설정. webapp/resources -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/css/**" location="/resources/css/" />
+
+	<!-- 컨트롤러가 리턴으로 돌려준 문자를 'refix + 문자 + suffix'(/WEB-INF/views/index.jsp)로 만들어 전달 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	<!-- 어노테이션이 붙은 것들을 빈으로 등록해줌 -->
+	<context:component-scan base-package="com.care.root" />
+	<context:component-scan base-package="com.care.get_post" />
+	<context:component-scan base-package="com.care.member" />
+	
+	<beans:bean id="memberS" class="com.care.root.MemberService"/><!-- 수동으로 빈 생성 -->
+</beans:beans>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;tx_aop_16/src/main/resources/mapper&apos; to &apos;mappers&apos;" description="Rename resource &apos;mapper&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/mapper" name="mappers" stamp="1637542518958" updateReferences="true"/>
+</session>

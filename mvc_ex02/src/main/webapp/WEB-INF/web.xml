@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- DB관련된 설정 파일의 위치를 지정 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- 디스패처 서블릿 :가장 앞단에서 HTTP 프로토콜로 들어오는 모든 요청을 가장 먼저 받아 적합한 컨트롤러에 위임해주는 프론트 컨트롤러(Front Controller) -->
+	<!-- 디스패처 서블릿 등록 설정 태그 -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name><!-- 별칭 -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class><!-- 이것의 별칭 :appServlet -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value><!-- 디스패처 서블릿 설정 위치 -->
+		</init-param>
+		<load-on-startup>1</load-on-startup><!-- 1번째로 로드해라 -->
+	</servlet>
+	<!-- appServlet : 별칭 / 
+	url-pattern에 /는 요청이 들어오게 되면 디스패처 서블릿으로 다 보내겠다 -->
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern><!-- /로 시작하는 모등 경로는 appServlet(디스패처 서블릿)이 모두 처리해주겠다. -->
+	</servlet-mapping>
+<filter>
+   <filter-name>encodingFilter</filter-name>
+   <filter-class>
+      org.springframework.web.filter.CharacterEncodingFilter     
+   </filter-class>
+   <init-param>
+      <param-name>encoding</param-name>   
+      <param-value>UTF-8</param-value>
+   </init-param>
+   <init-param>
+      <param-name>forceEncoding</param-name>  
+      <param-value>true</param-value>
+   </init-param>
+</filter>    
+<filter-mapping>
+   <filter-name>encodingFilter</filter-name>
+   <url-pattern>/*</url-pattern> <!-- /로 시작하는 모든 경로는 encodingFilter로 해준다. -->    
+</filter-mapping>
+</web-app>
